@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="com.siteforum.plugins.beacon"
+    version="1.0">
+    <name>Beacon</name>
+
+    
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Beacon">
+                <param name="ios-package" value="Beacon" />
+            </feature>
+        </config-file>
+        <js-module src="www/Beacon.js" name="Beacon">
+            <clobbers target="Beacon" />
+        </js-module>
+        <header-file src="src/ios/Beacon.h" />
+         <source-file src="src/ios/Beacon.m" />
+         <header-file src="src/ios/BeaconHelper.h" />
+         <source-file src="src/ios/BeaconHelper.m" />
+
+         <framework src="CoreLocation.framework" />
+         <framework src="CoreBluetooth.framework" />
+
+    </platform>
+</plugin>
